@@ -89,6 +89,53 @@ def login():
                 return session['admin']
         else:
             return "no"
+@app.route('/payement', methods=['GET', 'POST'])
+def payement():
+    if 'user' in session:
+        if request.method == "GET":
+            return render_template('form_payement.html')
+        else:
+            code_etudient = request.form['code_etudient']
+            image = request.files['image']
+            nivaux = request.form['nivaux']
+            annee = request.form['annee']
+            mois = request.form['mois']
+
+            # Check if image is valid and allowed
+            if image and allowed_file(image.filename):
+                # Secure the filename and save it
+                filename = secure_filename(image.filename)
+                filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                image.save(filepath)
+
+                # Retrieve the current user's ID
+                client=session['user']
+                user = Users.query.filter_by(tel=client).first()
+                if user:
+                    
+                    id_client = user.id
+
+                    # Create a new payement record with the image filename
+                    payement = Payement(
+                        id_client=id_client,
+                        code_etudient=code_etudient,
+                        image=filename,  # Store the filename, not the file object
+                        nivaux=nivaux,
+                        annee=annee,
+                        mois=mois
+                    )
+
+                    # Add to the database and commit
+                    db.session.add(payement)
+                    db.session.commit()
+
+                    return "Payment added successfully!"
+                else:
+                    return session['user']
+            else:
+                return "Invalid image format."
+    else:
+        return redirect(url_for('login'))
 
 @app.route('/logout')
 def logout():

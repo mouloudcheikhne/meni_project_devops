@@ -1,11 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Navbar Bootstrap - Medrasty</title>
+    <!-- Lien vers le fichier CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Style personnalisé pour le logo */
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: #333;
+        }
+        .navbar-brand img {
+            max-width: 30px;
+            margin-right: 10px;
+        }
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #333 !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #007bff !important;
+        }
+        #carouselExampleCaptions {
+            margin-top: 90px;
+            width: 100%;
+            height: 450px;
+        }
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-item img {
+            margin: 7px 7px;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .card img {
+            width: 100%;
+            height: 50%;
+        }
+        .gg {
+            margin-top: 90px;
+        }
+        /* Style pour la section de présentation */
+        .intro-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        .intro-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+        .intro-section p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h3>hello world</h3>
-</body>
-</html>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://via.placeholder.com/30" alt="Logo Apple Medrasty" width="30" height="30">
+                Medrasty
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section class="intro-section text-center">
+        <div class="container">
+            <h2>Bienvenue à l'École Apple Medrasty</h2>
+            <p>Nous offrons une éducation innovante et de qualité, de l'école primaire à la licence universitaire, en intégrant les dernières technologies et méthodologies pédagogiques.</p>
+            <p><strong>Notre Vision :</strong> Former des leaders compétents, créatifs et responsables, prêts à relever les défis du monde moderne.</p>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/photo5.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/photo2.avif" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/photo3.avif" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container gg">
+        <div class="row">
+            <div class="col col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/photo5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="{{url_for('payement')}}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/photo6.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="{{url_for('payement')}}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/photo7.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="{{url_for('payement')}}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Medrasty is a platform providing a variety of services to improve your health and lifestyle. We focus on helping you achieve your goals with personalized advice and tools.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">Profile</a></li>
+                        <li><a href="#" class="text-white">Login</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:contact@medrasty.com" class="text-white">contact@medrasty.com</a></p>
+                    <p>Phone: +123 456 789</p>
+                    <p>Follow Us:</p>
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i> Facebook</a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i> Twitter</a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 Medrasty. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Icons for Social Media Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons
